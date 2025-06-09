@@ -1,0 +1,13 @@
+﻿<Window x:Class="App004_20250609_ExceptionHandle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App004_20250609_ExceptionHandle"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Do Something Bad!!" HorizontalAlignment="Center" Height="61" VerticalAlignment="Center" Width="188" Click="Button_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\!Git\\WPFProj\\App004_20250609_ExceptionHandle\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C12A4579-2C14-452C-8D7F-8E8660264F05}|App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle.csproj|d:\\!git\\wpfproj\\app004_20250609_exceptionhandle\\app004_20250609_exceptionhandle\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12A4579-2C14-452C-8D7F-8E8660264F05}|App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle.csproj|solutionrelative:app004_20250609_exceptionhandle\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12A4579-2C14-452C-8D7F-8E8660264F05}|App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle.csproj|d:\\!git\\wpfproj\\app004_20250609_exceptionhandle\\app004_20250609_exceptionhandle\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12A4579-2C14-452C-8D7F-8E8660264F05}|App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle.csproj|solutionrelative:app004_20250609_exceptionhandle\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12A4579-2C14-452C-8D7F-8E8660264F05}|App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle.csproj|d:\\!git\\wpfproj\\app004_20250609_exceptionhandle\\app004_20250609_exceptionhandle\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C12A4579-2C14-452C-8D7F-8E8660264F05}|App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle.csproj|solutionrelative:app004_20250609_exceptionhandle\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App004_20250609_ExceptionHandle\\App.xaml.cs",
+              "ToolTip": "D:\\!Git\\WPFProj\\App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle\\App.xaml.cs",
+              "RelativeToolTip": "App004_20250609_ExceptionHandle\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T10:14:13.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "App004_20250609_ExceptionHandle\\MainWindow.xaml",
+              "ToolTip": "D:\\!Git\\WPFProj\\App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle\\MainWindow.xaml",
+              "RelativeToolTip": "App004_20250609_ExceptionHandle\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-09T10:11:45.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "App004_20250609_ExceptionHandle\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\!Git\\WPFProj\\App004_20250609_ExceptionHandle\\App004_20250609_ExceptionHandle\\MainWindow.xaml.cs",
+              "RelativeToolTip": "App004_20250609_ExceptionHandle\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAD4vxUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T10:11:38.922Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
