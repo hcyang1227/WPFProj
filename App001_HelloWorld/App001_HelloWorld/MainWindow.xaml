@@ -5,10 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App001_HelloWorld"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600">
-    <Grid>
-        <Label x:Name="lblHello" Content="" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="100" Width="300"/>
-        <Button x:Name="btnHello" Content="Click Me" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top" Height="25" Width="200" Click="btnHello_Click"/>
+        Title="MainWindow" Height="226" Width="509" ResizeMode="CanMinimize">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Block 1-->
+        <GroupBox Grid.Column="0" Header="GroupBox"/>
+        <Label x:Name="lblHello" Content="" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Height="100" Width="126"/>
+        <Button Grid.Column="0" x:Name="btnHello" Content="Click Me" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Height="25" Width="125" Click="btnHello_Click"/>
+
+        <!--Block 2-->
+        <GroupBox Grid.Column="1" Header="Counter"/>
+        <Label Grid.Column="1" x:Name="lblCount" Content="" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Height="100" Width="125"/>
+        <Button Grid.Column="1" x:Name="btnCount" Content="Count to 10" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Height="25" Width="125" Click="btnCount_Click"/>
+
+        <!--Block 3-->
+        <GroupBox Grid.Column="2" Header="Datetime"/>
+        <Label Grid.Column="2" x:Name="lblDate" Content="" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Height="125" Width="125"/>
 
     </Grid>
 </Window>
