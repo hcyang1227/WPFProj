@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "App001_HelloWorld/1.0.0": {
+        "runtime": {
+          "App001_HelloWorld.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "App001_HelloWorld/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
