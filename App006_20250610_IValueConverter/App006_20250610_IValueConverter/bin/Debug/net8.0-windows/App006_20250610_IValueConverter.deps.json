@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "App006_20250610_IValueConverter/1.0.0": {
+        "runtime": {
+          "App006_20250610_IValueConverter.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "App006_20250610_IValueConverter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
