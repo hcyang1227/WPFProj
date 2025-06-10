@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\!Git\\WPFProj\\App005_20250610_ComprehensiveExercises\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BADFCDEB-92CA-492F-95ED-D4684F9D2E9D}|App005_20250610_ComprehensiveExercises\\App005_20250610_ComprehensiveExercises.csproj|d:\\!git\\wpfproj\\app005_20250610_comprehensiveexercises\\app005_20250610_comprehensiveexercises\\information.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BADFCDEB-92CA-492F-95ED-D4684F9D2E9D}|App005_20250610_ComprehensiveExercises\\App005_20250610_ComprehensiveExercises.csproj|solutionrelative:app005_20250610_comprehensiveexercises\\information.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADFCDEB-92CA-492F-95ED-D4684F9D2E9D}|App005_20250610_ComprehensiveExercises\\App005_20250610_ComprehensiveExercises.csproj|d:\\!git\\wpfproj\\app005_20250610_comprehensiveexercises\\app005_20250610_comprehensiveexercises\\information.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADFCDEB-92CA-492F-95ED-D4684F9D2E9D}|App005_20250610_ComprehensiveExercises\\App005_20250610_ComprehensiveExercises.csproj|solutionrelative:app005_20250610_comprehensiveexercises\\information.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Information.xaml.cs",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App005_20250610_ComprehensiveExercises\\App005_20250610_ComprehensiveExercises\\Information.xaml.cs",
+              "RelativeDocumentMoniker": "App005_20250610_ComprehensiveExercises\\Information.xaml.cs",
+              "ToolTip": "D:\\!Git\\WPFProj\\App005_20250610_ComprehensiveExercises\\App005_20250610_ComprehensiveExercises\\Information.xaml.cs",
+              "RelativeToolTip": "App005_20250610_ComprehensiveExercises\\Information.xaml.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAACUAAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T05:15:17.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Information.xaml",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App005_20250610_ComprehensiveExercises\\App005_20250610_ComprehensiveExercises\\Information.xaml",
+              "RelativeDocumentMoniker": "App005_20250610_ComprehensiveExercises\\Information.xaml",
+              "ToolTip": "D:\\!Git\\WPFProj\\App005_20250610_ComprehensiveExercises\\App005_20250610_ComprehensiveExercises\\Information.xaml",
+              "RelativeToolTip": "App005_20250610_ComprehensiveExercises\\Information.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-10T05:55:57.732Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

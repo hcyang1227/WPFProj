@@ -1,0 +1,9 @@
+﻿<Application x:Class="App005_20250610_ComprehensiveExercises.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:App005_20250610_ComprehensiveExercises"
+             StartupUri="Information.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
