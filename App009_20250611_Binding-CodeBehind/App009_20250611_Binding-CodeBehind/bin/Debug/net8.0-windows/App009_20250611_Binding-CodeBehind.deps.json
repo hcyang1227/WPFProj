@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "App009_20250611_Binding-CodeBehind/1.0.0": {
+        "runtime": {
+          "App009_20250611_Binding-CodeBehind.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "App009_20250611_Binding-CodeBehind/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
