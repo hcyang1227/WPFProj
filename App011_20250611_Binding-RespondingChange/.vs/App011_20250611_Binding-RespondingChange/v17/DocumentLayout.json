@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\!Git\\WPFProj\\App011_20250611_Binding-RespondingChange\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0FEA4812-94E7-4A36-A0A1-D6F2840F5D2E}|App011_20250611_Binding-RespondingChange\\App011_20250611_Binding-RespondingChange.csproj|d:\\!git\\wpfproj\\app011_20250611_binding-respondingchange\\app011_20250611_binding-respondingchange\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FEA4812-94E7-4A36-A0A1-D6F2840F5D2E}|App011_20250611_Binding-RespondingChange\\App011_20250611_Binding-RespondingChange.csproj|solutionrelative:app011_20250611_binding-respondingchange\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FEA4812-94E7-4A36-A0A1-D6F2840F5D2E}|App011_20250611_Binding-RespondingChange\\App011_20250611_Binding-RespondingChange.csproj|d:\\!git\\wpfproj\\app011_20250611_binding-respondingchange\\app011_20250611_binding-respondingchange\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0FEA4812-94E7-4A36-A0A1-D6F2840F5D2E}|App011_20250611_Binding-RespondingChange\\App011_20250611_Binding-RespondingChange.csproj|solutionrelative:app011_20250611_binding-respondingchange\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App011_20250611_Binding-RespondingChange\\App011_20250611_Binding-RespondingChange\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "App011_20250611_Binding-RespondingChange\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\!Git\\WPFProj\\App011_20250611_Binding-RespondingChange\\App011_20250611_Binding-RespondingChange\\MainWindow.xaml.cs",
+              "RelativeToolTip": "App011_20250611_Binding-RespondingChange\\MainWindow.xaml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwC4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T09:14:39.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App011_20250611_Binding-RespondingChange\\App011_20250611_Binding-RespondingChange\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "App011_20250611_Binding-RespondingChange\\MainWindow.xaml",
+              "ToolTip": "D:\\!Git\\WPFProj\\App011_20250611_Binding-RespondingChange\\App011_20250611_Binding-RespondingChange\\MainWindow.xaml",
+              "RelativeToolTip": "App011_20250611_Binding-RespondingChange\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-11T09:14:40.973Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
