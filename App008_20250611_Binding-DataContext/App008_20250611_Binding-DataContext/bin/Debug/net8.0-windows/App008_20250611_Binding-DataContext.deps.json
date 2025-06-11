@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "App008_20250611_Binding-DataContext/1.0.0": {
+        "runtime": {
+          "App008_20250611_Binding-DataContext.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "App008_20250611_Binding-DataContext/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
