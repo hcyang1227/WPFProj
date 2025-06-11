@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "App010_20250611_Binding-UpdateSourceTrigger/1.0.0": {
+        "runtime": {
+          "App010_20250611_Binding-UpdateSourceTrigger.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "App010_20250611_Binding-UpdateSourceTrigger/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
