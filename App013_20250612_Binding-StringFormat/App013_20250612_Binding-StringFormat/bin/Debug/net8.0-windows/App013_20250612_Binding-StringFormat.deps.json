@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "App013_20250612_Binding-StringFormat/1.0.0": {
+        "runtime": {
+          "App013_20250612_Binding-StringFormat.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "App013_20250612_Binding-StringFormat/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
