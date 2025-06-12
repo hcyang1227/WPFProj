@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\!Git\\WPFProj\\App012_20250612_MVVM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46EF6580-CB07-484F-A536-1D7B088806EF}|App012_20250612_MVVM\\App012_20250612_MVVM.csproj|d:\\!git\\wpfproj\\app012_20250612_mvvm\\app012_20250612_mvvm\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46EF6580-CB07-484F-A536-1D7B088806EF}|App012_20250612_MVVM\\App012_20250612_MVVM.csproj|solutionrelative:app012_20250612_mvvm\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46EF6580-CB07-484F-A536-1D7B088806EF}|App012_20250612_MVVM\\App012_20250612_MVVM.csproj|d:\\!git\\wpfproj\\app012_20250612_mvvm\\app012_20250612_mvvm\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{46EF6580-CB07-484F-A536-1D7B088806EF}|App012_20250612_MVVM\\App012_20250612_MVVM.csproj|solutionrelative:app012_20250612_mvvm\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App012_20250612_MVVM\\App012_20250612_MVVM\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "App012_20250612_MVVM\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\!Git\\WPFProj\\App012_20250612_MVVM\\App012_20250612_MVVM\\MainWindow.xaml.cs",
+              "RelativeToolTip": "App012_20250612_MVVM\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T01:26:52.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\!Git\\WPFProj\\App012_20250612_MVVM\\App012_20250612_MVVM\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "App012_20250612_MVVM\\MainWindow.xaml",
+              "ToolTip": "D:\\!Git\\WPFProj\\App012_20250612_MVVM\\App012_20250612_MVVM\\MainWindow.xaml",
+              "RelativeToolTip": "App012_20250612_MVVM\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-12T01:26:54.821Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
