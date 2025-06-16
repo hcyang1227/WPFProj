@@ -1,14 +1,6 @@
-﻿using System.Text;
+﻿using System.Reflection.Emit;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace App001_HelloWorld
 {
@@ -19,18 +11,13 @@ namespace App001_HelloWorld
     {
         #region [Initial]
 
-        DispatcherTimer timer1 = new DispatcherTimer();
-        DispatcherTimer timer2 = new DispatcherTimer();
-        int timerCounter = 0;
+        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+        private int intCounter = 0;
 
         public MainWindow()
         {
             InitializeComponent();
-            timer1.Tick += dispatcherTimer_Tick1;
-            timer1.Interval = new TimeSpan(0, 0, 0, 0, 350);
-            timer2.Tick += dispatcherTimer_Tick2;
-            timer2.Interval = new TimeSpan(0, 0, 0, 0, 1000);
-            timer2.Start();
+            ShowCurrentDatetime();
         }
 
         #endregion
@@ -42,23 +29,53 @@ namespace App001_HelloWorld
 
         private void btnCount_Click(object sender, RoutedEventArgs e)
         {
-            timerCounter = 0;
-            lblCount.Content = timerCounter.ToString();
-            timer1.Start();
+            //取消現有計數，並建立新CancellationTokenSource
+            cancellationTokenSource?.Cancel();
+            cancellationTokenSource?.Dispose();
+            cancellationTokenSource = new CancellationTokenSource();
+            CancellationToken token = cancellationTokenSource.Token;
+
+            //計數器初始化
+            intCounter = 0;
+            ChangeCountLabel();
+
+            //建立任務(顯示0~10)
+            Task task = Task.Run(async () =>
+            {
+                try
+                {
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        token.ThrowIfCancellationRequested();
+                        await Task.Delay(300);
+                        token.ThrowIfCancellationRequested();
+                        intCounter = i;
+                        ChangeCountLabel();
+                    }
+                }
+                catch (OperationCanceledException)
+                {
+                    Console.WriteLine("Task was canceled.");
+                }
+            });
+        }
+        private void ChangeCountLabel()
+        {
+            Application.Current.Dispatcher.Invoke(new Action(() => { lblCount.Content = intCounter.ToString(); }));
         }
 
-        private void dispatcherTimer_Tick1(object sender, EventArgs e)
+        private async void ShowCurrentDatetime()
         {
-            if (timerCounter < 10)
+            while (true)
             {
-                timerCounter += 1;
-                lblCount.Content = timerCounter.ToString();
+                await Task.Delay(10);
+                ChangeDatetimeLabel();
             }
         }
 
-        private void dispatcherTimer_Tick2(object sender, EventArgs e)
+        private void ChangeDatetimeLabel()
         {
-            lblDate.Content = "Current Datetime:\n" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+            Application.Current.Dispatcher.Invoke(new Action(() => { lblDate.Content = DateTime.UtcNow.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss"); }));
         }
 
         #endregion
