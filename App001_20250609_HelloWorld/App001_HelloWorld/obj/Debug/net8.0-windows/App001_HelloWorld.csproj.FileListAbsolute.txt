@@ -40,3 +40,4 @@ C:\!Git\WPFProj\App001_20250609_HelloWorld\App001_HelloWorld\obj\Debug\net8.0-wi
 C:\!Git\WPFProj\App001_20250609_HelloWorld\App001_HelloWorld\obj\Debug\net8.0-windows\App001_HelloWorld.pdb
 C:\!Git\WPFProj\App001_20250609_HelloWorld\App001_HelloWorld\obj\Debug\net8.0-windows\App001_HelloWorld.genruntimeconfig.cache
 C:\!Git\WPFProj\App001_20250609_HelloWorld\App001_HelloWorld\obj\Debug\net8.0-windows\ref\App001_HelloWorld.dll
+C:\!Git\WPFProj\App001_20250609_HelloWorld\App001_HelloWorld\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

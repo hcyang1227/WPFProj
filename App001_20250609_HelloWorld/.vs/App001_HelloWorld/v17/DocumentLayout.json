@@ -7,8 +7,16 @@
       "RelativeMoniker": "D:0:0:{9B576ED6-4D42-4942-8154-63E7AE099DCF}|App001_HelloWorld\\App001_HelloWorld.csproj|solutionrelative:app001_helloworld\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9B576ED6-4D42-4942-8154-63E7AE099DCF}|App001_HelloWorld\\App001_HelloWorld.csproj|c:\\!git\\wpfproj\\app001_20250609_helloworld\\app001_helloworld\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B576ED6-4D42-4942-8154-63E7AE099DCF}|App001_HelloWorld\\App001_HelloWorld.csproj|solutionrelative:app001_helloworld\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9B576ED6-4D42-4942-8154-63E7AE099DCF}|App001_HelloWorld\\App001_HelloWorld.csproj|c:\\!git\\wpfproj\\app001_20250609_helloworld\\app001_helloworld\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B576ED6-4D42-4942-8154-63E7AE099DCF}|App001_HelloWorld\\App001_HelloWorld.csproj|solutionrelative:app001_helloworld\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B576ED6-4D42-4942-8154-63E7AE099DCF}|App001_HelloWorld\\App001_HelloWorld.csproj|c:\\!git\\wpfproj\\app001_20250609_helloworld\\app001_helloworld\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B576ED6-4D42-4942-8154-63E7AE099DCF}|App001_HelloWorld\\App001_HelloWorld.csproj|solutionrelative:app001_helloworld\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\!Git\\WPFProj\\App001_20250609_HelloWorld\\App001_HelloWorld\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "App001_HelloWorld\\MainWindow.xaml.cs",
               "ToolTip": "C:\\!Git\\WPFProj\\App001_20250609_HelloWorld\\App001_HelloWorld\\MainWindow.xaml.cs",
               "RelativeToolTip": "App001_HelloWorld\\MainWindow.xaml.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwE0AAACTAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAewAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T06:44:54.125Z",
+              "WhenOpened": "2025-06-16T03:53:37.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\!Git\\WPFProj\\App001_20250609_HelloWorld\\App001_HelloWorld\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "App001_HelloWorld\\MainViewModel.cs",
+              "ToolTip": "C:\\!Git\\WPFProj\\App001_20250609_HelloWorld\\App001_HelloWorld\\MainViewModel.cs",
+              "RelativeToolTip": "App001_HelloWorld\\MainViewModel.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAMwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T03:24:54.36Z",
               "EditorCaption": ""
             },
             {
@@ -43,6 +64,19 @@
               "RelativeToolTip": "App001_HelloWorld\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-06-09T01:52:04.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "C:\\!Git\\WPFProj\\App001_20250609_HelloWorld\\App001_HelloWorld\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "App001_HelloWorld\\RelayCommand.cs",
+              "ToolTip": "C:\\!Git\\WPFProj\\App001_20250609_HelloWorld\\App001_HelloWorld\\RelayCommand.cs",
+              "RelativeToolTip": "App001_HelloWorld\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T03:23:24.311Z",
               "EditorCaption": ""
             }
           ]
