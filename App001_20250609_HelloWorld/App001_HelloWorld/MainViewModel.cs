@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 
@@ -8,9 +7,9 @@ namespace App001_HelloWorld
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private string labelHello;
-        private string labelCounter;
-        private string labelDatetime;
+        private string labelHello = "";
+        private string labelCounter = "";
+        private string labelDatetime = "";
 
         public string LabelHello
         {
@@ -34,11 +33,9 @@ namespace App001_HelloWorld
 
         public MainViewModel()
         {
-            LabelHello = "";
-            LabelCounter = "";
             UpdateLabelHelloCommand = new RelayCommand(() => LabelHello = "Hello World !!");
             UpdateCountToTenCommand = new RelayCommand(CountToTen);
-            ShowCurrentDatetime();
+            Task task = Task.Run(ShowCurrentDatetime);
         }
 
         private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
@@ -55,28 +52,30 @@ namespace App001_HelloWorld
             intCounter = 0;
             LabelCounter = intCounter.ToString();
 
-            //建立任務(顯示0~10)
-            Task task = Task.Run(async () =>
-            {
-                try
-                {
-                    for (int i = 1; i <= 10; i++)
-                    {
-                        token.ThrowIfCancellationRequested();
-                        await Task.Delay(300);
-                        token.ThrowIfCancellationRequested();
-                        intCounter = i;
-                        LabelCounter = intCounter.ToString();
-                    }
-                }
-                catch (OperationCanceledException)
-                {
-                    Console.WriteLine("Task was canceled.");
-                }
-            });
+            //Task.Run()接收的是沒有參數的委派（delegate），但我的方法有參數
+            Task task = Task.Run(() => CountToTenTask(token));
         }
 
-        private async void ShowCurrentDatetime()
+        private async Task CountToTenTask(CancellationToken token)
+        {
+            try
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    token.ThrowIfCancellationRequested();
+                    await Task.Delay(300);
+                    token.ThrowIfCancellationRequested();
+                    intCounter = i;
+                    LabelCounter = intCounter.ToString();
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                Console.WriteLine("Task was canceled.");
+            }
+        }
+
+        private async Task ShowCurrentDatetime()
         {
             while (true)
             {
@@ -93,8 +92,9 @@ namespace App001_HelloWorld
             }));
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+
+        public event PropertyChangedEventHandler? PropertyChanged; 
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
