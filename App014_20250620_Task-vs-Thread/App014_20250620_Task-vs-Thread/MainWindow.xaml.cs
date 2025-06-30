@@ -43,9 +43,11 @@ namespace App014_20250620_Task_vs_Thread
             await Task.Delay(interval);
             UpdateOutput($"[Task{taskNum} before] Thread ID: {Thread.CurrentThread.ManagedThreadId}");
             await Task.Delay(interval);
+
             //用遞迴寫法依序執行 TaskN -> ... -> Task3 -> Task2 -> Task1
             if (taskNum > 1)
                 await Task.Run(() => TaskMulti(taskNum - 1));
+
             await Task.Delay(interval);
             UpdateOutput($"[Task{taskNum} after] Thread ID: {Thread.CurrentThread.ManagedThreadId}");
             await Task.Delay(interval);
