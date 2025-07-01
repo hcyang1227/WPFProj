@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mainModel1.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Git\WPFProj\App015_20250701_EF6-SQLite\DingZing.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Defect">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="index" Type="integer" Nullable="false" />
+    <Property Name="photo_x" Type="integer" />
+    <Property Name="photo_y" Type="integer" />
+    <Property Name="world_x" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="world_y" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="roll_x" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="roll_y" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="kind" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="reliability" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="image_index" Type="integer" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="index" Type="integer" Nullable="false" />
+    <Property Name="datetime" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="light" Type="integer" />
+    <Property Name="cam" Type="integer" />
+    <Property Name="result" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="path" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="material_index" Type="integer" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="index" Type="integer" Nullable="false" />
+    <Property Name="roll_width" Type="integer" />
+  </EntityType>
+  <Association Name="FK_Defect_0_0">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Defect" Type="Self.Defect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="index" />
+      </Principal>
+      <Dependent Role="Defect">
+        <PropertyRef Name="image_index" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Image_0_0">
+    <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+    <End Role="Image" Type="Self.Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="index" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="material_index" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mainModel1StoreContainer">
+    <EntitySet Name="Defect" EntityType="Self.Defect" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" store:Type="Tables" />
+    <EntitySet Name="Material" EntityType="Self.Material" store:Type="Tables" />
+    <AssociationSet Name="FK_Defect_0_0" Association="Self.FK_Defect_0_0">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="Defect" EntitySet="Defect" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Image_0_0" Association="Self.FK_Image_0_0">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="Image" EntitySet="Image" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="mainModel1.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Git\WPFProj\App015_20250701_EF6-SQLite\DingZing.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Defect">
+          <Key>
+            <PropertyRef Name="index" />
+          </Key>
+          <Property Name="index" Type="integer" Nullable="false" />
+          <Property Name="photo_x" Type="integer" />
+          <Property Name="photo_y" Type="integer" />
+          <Property Name="world_x" Type="decimal" Precision="53" Scale="0" />
+          <Property Name="world_y" Type="decimal" Precision="53" Scale="0" />
+          <Property Name="roll_x" Type="decimal" Precision="53" Scale="0" />
+          <Property Name="roll_y" Type="decimal" Precision="53" Scale="0" />
+          <Property Name="kind" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="reliability" Type="decimal" Precision="53" Scale="0" />
+          <Property Name="image_index" Type="integer" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="index" />
+          </Key>
+          <Property Name="index" Type="integer" Nullable="false" />
+          <Property Name="datetime" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="light" Type="integer" />
+          <Property Name="cam" Type="integer" />
+          <Property Name="result" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="path" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="material_index" Type="integer" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="index" />
+          </Key>
+          <Property Name="index" Type="integer" Nullable="false" />
+          <Property Name="roll_width" Type="integer" />
+        </EntityType>
+        <Association Name="FK_Defect_0_0">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="Defect" Type="Self.Defect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="index" />
+            </Principal>
+            <Dependent Role="Defect">
+              <PropertyRef Name="image_index" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Image_0_0">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="Image" Type="Self.Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="index" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="material_index" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mainModel1StoreContainer">
+          <EntitySet Name="Defect" EntityType="Self.Defect" store:Type="Tables" />
+          <EntitySet Name="Image" EntityType="Self.Image" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" store:Type="Tables" />
+          <AssociationSet Name="FK_Defect_0_0" Association="Self.FK_Defect_0_0">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Defect" EntitySet="Defect" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Image_0_0" Association="Self.FK_Image_0_0">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="Image" EntitySet="Image" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mainModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="mainEntitiesDingZing" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Defects" EntityType="mainModel1.Defect" />
+          <EntitySet Name="Images" EntityType="mainModel1.Image" />
+          <EntitySet Name="Materials" EntityType="mainModel1.Material" />
+          <AssociationSet Name="FK_Defect_0_0" Association="mainModel1.FK_Defect_0_0">
+            <End Role="Image" EntitySet="Images" />
+            <End Role="Defect" EntitySet="Defects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Image_0_0" Association="mainModel1.FK_Image_0_0">
+            <End Role="Material" EntitySet="Materials" />
+            <End Role="Image" EntitySet="Images" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Defect">
+          <Key>
+            <PropertyRef Name="index" />
+          </Key>
+          <Property Name="index" Type="Int64" Nullable="false" />
+          <Property Name="photo_x" Type="Int64" />
+          <Property Name="photo_y" Type="Int64" />
+          <Property Name="world_x" Type="Decimal" Precision="53" Scale="0" />
+          <Property Name="world_y" Type="Decimal" Precision="53" Scale="0" />
+          <Property Name="roll_x" Type="Decimal" Precision="53" Scale="0" />
+          <Property Name="roll_y" Type="Decimal" Precision="53" Scale="0" />
+          <Property Name="kind" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="reliability" Type="Decimal" Precision="53" Scale="0" />
+          <Property Name="image_index" Type="Int64" />
+          <NavigationProperty Name="Image" Relationship="mainModel1.FK_Defect_0_0" FromRole="Defect" ToRole="Image" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="index" />
+          </Key>
+          <Property Name="index" Type="Int64" Nullable="false" />
+          <Property Name="datetime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="light" Type="Int64" />
+          <Property Name="cam" Type="Int64" />
+          <Property Name="result" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="path" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="material_index" Type="Int64" />
+          <NavigationProperty Name="Defects" Relationship="mainModel1.FK_Defect_0_0" FromRole="Image" ToRole="Defect" />
+          <NavigationProperty Name="Material" Relationship="mainModel1.FK_Image_0_0" FromRole="Image" ToRole="Material" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="index" />
+          </Key>
+          <Property Name="index" Type="Int64" Nullable="false" />
+          <Property Name="roll_width" Type="Int64" />
+          <NavigationProperty Name="Images" Relationship="mainModel1.FK_Image_0_0" FromRole="Material" ToRole="Image" />
+        </EntityType>
+        <Association Name="FK_Defect_0_0">
+          <End Type="mainModel1.Image" Role="Image" Multiplicity="0..1" />
+          <End Type="mainModel1.Defect" Role="Defect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="index" />
+            </Principal>
+            <Dependent Role="Defect">
+              <PropertyRef Name="image_index" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Image_0_0">
+          <End Type="mainModel1.Material" Role="Material" Multiplicity="0..1" />
+          <End Type="mainModel1.Image" Role="Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="index" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="material_index" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mainModel1StoreContainer" CdmEntityContainer="mainEntitiesDingZing">
+          <EntitySetMapping Name="Defects">
+            <EntityTypeMapping TypeName="mainModel1.Defect">
+              <MappingFragment StoreEntitySet="Defect">
+                <ScalarProperty Name="image_index" ColumnName="image_index" />
+                <ScalarProperty Name="reliability" ColumnName="reliability" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="roll_y" ColumnName="roll_y" />
+                <ScalarProperty Name="roll_x" ColumnName="roll_x" />
+                <ScalarProperty Name="world_y" ColumnName="world_y" />
+                <ScalarProperty Name="world_x" ColumnName="world_x" />
+                <ScalarProperty Name="photo_y" ColumnName="photo_y" />
+                <ScalarProperty Name="photo_x" ColumnName="photo_x" />
+                <ScalarProperty Name="index" ColumnName="index" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="mainModel1.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="material_index" ColumnName="material_index" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="cam" ColumnName="cam" />
+                <ScalarProperty Name="light" ColumnName="light" />
+                <ScalarProperty Name="datetime" ColumnName="datetime" />
+                <ScalarProperty Name="index" ColumnName="index" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materials">
+            <EntityTypeMapping TypeName="mainModel1.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="roll_width" ColumnName="roll_width" />
+                <ScalarProperty Name="index" ColumnName="index" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

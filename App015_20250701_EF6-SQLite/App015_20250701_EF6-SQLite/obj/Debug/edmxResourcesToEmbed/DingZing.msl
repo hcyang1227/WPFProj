@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mainModel1StoreContainer" CdmEntityContainer="mainEntitiesDingZing">
+    <EntitySetMapping Name="Defects">
+      <EntityTypeMapping TypeName="mainModel1.Defect">
+        <MappingFragment StoreEntitySet="Defect">
+          <ScalarProperty Name="image_index" ColumnName="image_index" />
+          <ScalarProperty Name="reliability" ColumnName="reliability" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="roll_y" ColumnName="roll_y" />
+          <ScalarProperty Name="roll_x" ColumnName="roll_x" />
+          <ScalarProperty Name="world_y" ColumnName="world_y" />
+          <ScalarProperty Name="world_x" ColumnName="world_x" />
+          <ScalarProperty Name="photo_y" ColumnName="photo_y" />
+          <ScalarProperty Name="photo_x" ColumnName="photo_x" />
+          <ScalarProperty Name="index" ColumnName="index" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="mainModel1.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="material_index" ColumnName="material_index" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="cam" ColumnName="cam" />
+          <ScalarProperty Name="light" ColumnName="light" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="index" ColumnName="index" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="mainModel1.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="roll_width" ColumnName="roll_width" />
+          <ScalarProperty Name="index" ColumnName="index" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

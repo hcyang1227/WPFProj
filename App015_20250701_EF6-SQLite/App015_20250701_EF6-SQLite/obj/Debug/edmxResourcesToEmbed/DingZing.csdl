@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mainModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="mainEntitiesDingZing" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Defects" EntityType="mainModel1.Defect" />
+    <EntitySet Name="Images" EntityType="mainModel1.Image" />
+    <EntitySet Name="Materials" EntityType="mainModel1.Material" />
+    <AssociationSet Name="FK_Defect_0_0" Association="mainModel1.FK_Defect_0_0">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Defect" EntitySet="Defects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Image_0_0" Association="mainModel1.FK_Image_0_0">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Defect">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="index" Type="Int64" Nullable="false" />
+    <Property Name="photo_x" Type="Int64" />
+    <Property Name="photo_y" Type="Int64" />
+    <Property Name="world_x" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="world_y" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="roll_x" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="roll_y" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="kind" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="reliability" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="image_index" Type="Int64" />
+    <NavigationProperty Name="Image" Relationship="mainModel1.FK_Defect_0_0" FromRole="Defect" ToRole="Image" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="index" Type="Int64" Nullable="false" />
+    <Property Name="datetime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="light" Type="Int64" />
+    <Property Name="cam" Type="Int64" />
+    <Property Name="result" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="path" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="material_index" Type="Int64" />
+    <NavigationProperty Name="Defects" Relationship="mainModel1.FK_Defect_0_0" FromRole="Image" ToRole="Defect" />
+    <NavigationProperty Name="Material" Relationship="mainModel1.FK_Image_0_0" FromRole="Image" ToRole="Material" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="index" Type="Int64" Nullable="false" />
+    <Property Name="roll_width" Type="Int64" />
+    <NavigationProperty Name="Images" Relationship="mainModel1.FK_Image_0_0" FromRole="Material" ToRole="Image" />
+  </EntityType>
+  <Association Name="FK_Defect_0_0">
+    <End Type="mainModel1.Image" Role="Image" Multiplicity="0..1" />
+    <End Type="mainModel1.Defect" Role="Defect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="index" />
+      </Principal>
+      <Dependent Role="Defect">
+        <PropertyRef Name="image_index" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Image_0_0">
+    <End Type="mainModel1.Material" Role="Material" Multiplicity="0..1" />
+    <End Type="mainModel1.Image" Role="Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="index" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="material_index" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

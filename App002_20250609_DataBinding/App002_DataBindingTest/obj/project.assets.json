@@ -9,21 +9,19 @@
   },
   "packageFolders": {
     "C:\\Users\\hcyan\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\!Git\\WPFProj\\App002_DataBindingTest\\App002_DataBindingTest\\App002_DataBindingTest.csproj",
+      "projectUniqueName": "C:\\!Git\\WPFProj\\App002_20250609_DataBinding\\App002_DataBindingTest\\App002_DataBindingTest.csproj",
       "projectName": "App002_DataBindingTest",
-      "projectPath": "D:\\!Git\\WPFProj\\App002_DataBindingTest\\App002_DataBindingTest\\App002_DataBindingTest.csproj",
+      "projectPath": "C:\\!Git\\WPFProj\\App002_20250609_DataBinding\\App002_DataBindingTest\\App002_DataBindingTest.csproj",
       "packagesPath": "C:\\Users\\hcyan\\.nuget\\packages\\",
-      "outputPath": "D:\\!Git\\WPFProj\\App002_DataBindingTest\\App002_DataBindingTest\\obj\\",
+      "outputPath": "C:\\!Git\\WPFProj\\App002_20250609_DataBinding\\App002_DataBindingTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\hcyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,7 +75,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
