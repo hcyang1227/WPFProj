@@ -3,10 +3,58 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:App015_20250701_EF6_SQLite"
+        xmlns:vm="clr-namespace:App015_20250701_EF6_SQLite.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- 第一列顯示 MaterialList -->
+        <ListView Grid.Row="0" ItemsSource="{Binding MaterialList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Index" DisplayMemberBinding="{Binding index}" />
+                    <GridViewColumn Header="Roll Width" DisplayMemberBinding="{Binding roll_width}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- 第二列顯示 ImageList -->
+        <ListView Grid.Row="1" ItemsSource="{Binding ImageList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Index" DisplayMemberBinding="{Binding index}" />
+                    <GridViewColumn Header="Datetime" DisplayMemberBinding="{Binding datetime}" />
+                    <GridViewColumn Header="Light" DisplayMemberBinding="{Binding light}" />
+                    <GridViewColumn Header="Camera" DisplayMemberBinding="{Binding cam}" />
+                    <GridViewColumn Header="Result" DisplayMemberBinding="{Binding result}" />
+                    <GridViewColumn Header="Path" DisplayMemberBinding="{Binding path}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- 第三列顯示 DefectList -->
+        <ListView Grid.Row="2" ItemsSource="{Binding DefectList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Index" DisplayMemberBinding="{Binding index}" />
+                    <GridViewColumn Header="PhotoX" DisplayMemberBinding="{Binding photo_x}" />
+                    <GridViewColumn Header="PhotoY" DisplayMemberBinding="{Binding photo_y}" />
+                    <GridViewColumn Header="WorldX" DisplayMemberBinding="{Binding world_x}" />
+                    <GridViewColumn Header="WorldY" DisplayMemberBinding="{Binding world_y}" />
+                    <GridViewColumn Header="RollX" DisplayMemberBinding="{Binding roll_y}" />
+                    <GridViewColumn Header="RollY" DisplayMemberBinding="{Binding roll_x}" />
+                    <GridViewColumn Header="Kind" DisplayMemberBinding="{Binding kind}" />
+                    <GridViewColumn Header="Reliability" DisplayMemberBinding="{Binding reliability}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

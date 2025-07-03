@@ -17,7 +17,7 @@
     <Key>
       <PropertyRef Name="index" />
     </Key>
-    <Property Name="index" Type="Int64" Nullable="false" />
+    <Property Name="index" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="photo_x" Type="Int64" />
     <Property Name="photo_y" Type="Int64" />
     <Property Name="world_x" Type="Decimal" Precision="53" Scale="0" />
@@ -33,7 +33,7 @@
     <Key>
       <PropertyRef Name="index" />
     </Key>
-    <Property Name="index" Type="Int64" Nullable="false" />
+    <Property Name="index" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="datetime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="light" Type="Int64" />
     <Property Name="cam" Type="Int64" />
@@ -47,7 +47,7 @@
     <Key>
       <PropertyRef Name="index" />
     </Key>
-    <Property Name="index" Type="Int64" Nullable="false" />
+    <Property Name="index" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="roll_width" Type="Int64" />
     <NavigationProperty Name="Images" Relationship="mainModel1.FK_Image_0_0" FromRole="Material" ToRole="Image" />
   </EntityType>

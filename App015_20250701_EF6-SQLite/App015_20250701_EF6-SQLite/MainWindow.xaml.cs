@@ -10,7 +10,6 @@ namespace App015_20250701_EF6_SQLite
         public MainWindow()
         {
             InitializeComponent();
-            AccessDatabase.InitialProcess();
         }
     }
 }

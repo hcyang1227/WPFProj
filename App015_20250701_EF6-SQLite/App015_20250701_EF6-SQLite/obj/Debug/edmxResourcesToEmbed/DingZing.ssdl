@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="index" />
     </Key>
-    <Property Name="index" Type="integer" Nullable="false" />
+    <Property Name="index" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="photo_x" Type="integer" />
     <Property Name="photo_y" Type="integer" />
     <Property Name="world_x" Type="decimal" Precision="53" Scale="0" />
@@ -19,7 +19,7 @@
     <Key>
       <PropertyRef Name="index" />
     </Key>
-    <Property Name="index" Type="integer" Nullable="false" />
+    <Property Name="index" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="datetime" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="light" Type="integer" />
     <Property Name="cam" Type="integer" />
@@ -31,7 +31,7 @@
     <Key>
       <PropertyRef Name="index" />
     </Key>
-    <Property Name="index" Type="integer" Nullable="false" />
+    <Property Name="index" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="roll_width" Type="integer" />
   </EntityType>
   <Association Name="FK_Defect_0_0">

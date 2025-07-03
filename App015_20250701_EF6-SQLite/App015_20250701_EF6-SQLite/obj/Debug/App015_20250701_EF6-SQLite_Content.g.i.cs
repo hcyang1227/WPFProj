@@ -10,5 +10,6 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dingzing.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dingzing.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("irepository.ef6.tt")]
 
 
