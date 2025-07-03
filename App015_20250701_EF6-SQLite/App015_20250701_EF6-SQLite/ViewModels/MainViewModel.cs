@@ -1,9 +1,8 @@
 using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
+using System.IO;
 using System.Linq;
-using System.Windows;
-using System.Windows.Data;
+using System.Windows.Media.Imaging;
 
 namespace App015_20250701_EF6_SQLite.ViewModels
 {
@@ -68,24 +67,32 @@ namespace App015_20250701_EF6_SQLite.ViewModels
             }
         }
 
-        private string _selectedImagePath;
-        public string SelectedImagePath
+        private BitmapImage _selectedDefectImage;
+        public BitmapImage SelectedDefectImage
         {
-            get => _selectedImagePath;
+            get => _selectedDefectImage;
             set
             {
-                if (_selectedImagePath != value)
+                if (_selectedDefectImage != value)
                 {
-                    _selectedImagePath = value;
-                    OnPropertyChanged(nameof(SelectedImagePath));
+                    _selectedDefectImage = value;
+                    OnPropertyChanged(nameof(SelectedDefectImage));
                 }
             }
         }
+
+        public RelayCommand SelectDefectImageCommand { get; }
         #endregion
         
         public MainViewModel()
         {
             LoadDatabase();
+
+            SelectDefectImageCommand = new RelayCommand(param =>
+            {
+                if (param is DefectModel defect)
+                    ShowDefectImage(defect);
+            });
 
             // 初始化時載入第一卷料捲
             if (MaterialList.Any())
@@ -213,6 +220,16 @@ namespace App015_20250701_EF6_SQLite.ViewModels
             {
                 FilteredDefectList = new ObservableCollection<DefectModel>();
             }
+        }
+
+        public void ShowDefectImage(DefectModel defect)
+        {
+            string imagePath = GetImagePathForDefect(defect);
+
+            if (imagePath != null && File.Exists(imagePath))
+                SelectedDefectImage = new BitmapImage(new Uri(imagePath));
+            else
+                SelectedDefectImage = null;
         }
 
         public string GetImagePathForDefect(DefectModel defect)
