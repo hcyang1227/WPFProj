@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -64,6 +65,20 @@ namespace App015_20250701_EF6_SQLite.ViewModels
             {
                 _filteredDefectList = value;
                 OnPropertyChanged(nameof(FilteredDefectList));
+            }
+        }
+
+        private string _selectedImagePath;
+        public string SelectedImagePath
+        {
+            get => _selectedImagePath;
+            set
+            {
+                if (_selectedImagePath != value)
+                {
+                    _selectedImagePath = value;
+                    OnPropertyChanged(nameof(SelectedImagePath));
+                }
             }
         }
         #endregion
@@ -198,6 +213,22 @@ namespace App015_20250701_EF6_SQLite.ViewModels
             {
                 FilteredDefectList = new ObservableCollection<DefectModel>();
             }
+        }
+
+        public string GetImagePathForDefect(DefectModel defect)
+        {
+            // 依據 DefectModel 的 DefectIndex 找到 Defect
+            Defect defectEntity = DefectList.FirstOrDefault(d => d.index == defect.DefectIndex);
+            if (defectEntity == null || !defectEntity.image_index.HasValue)
+                return string.Empty;
+
+            // 依據 Defect 的 image_index 找到 Image
+            var imageEntity = ImageList.FirstOrDefault(img => img.index == defectEntity.image_index.Value);
+            if (imageEntity == null)
+                return string.Empty;
+
+            // 回傳 Image 的 path 欄位
+            return imageEntity.path ?? string.Empty;
         }
 
         #endregion
