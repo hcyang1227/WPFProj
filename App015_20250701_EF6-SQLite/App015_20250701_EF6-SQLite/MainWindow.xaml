@@ -8,7 +8,7 @@
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="420" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -24,13 +24,15 @@
                             <TextBlock Text="{Binding index}" />
                             <TextBlock Text=", width: " />
                             <TextBlock Text="{Binding roll_width}" />
+                            <TextBlock Text="mm, height: " />
+                            <TextBlock Text="{Binding roll_height}" />
                             <TextBlock Text="mm" />
                         </StackPanel>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="400">
-                <Canvas Width="400" Height="1200" Background="Black">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="300" Width="{Binding CanvasWidth}">
+                <Canvas Height="{Binding CanvasHeight}" Width="{Binding CanvasWidth}" Background="Black">
                     <ItemsControl ItemsSource="{Binding FilteredDefectList}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -39,8 +41,8 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemContainerStyle>
                             <Style>
-                                <Setter Property="Canvas.Left" Value="{Binding roll_x}"/>
-                                <Setter Property="Canvas.Top" Value="{Binding roll_y}"/>
+                                <Setter Property="Canvas.Left" Value="{Binding CanvasX}"/>
+                                <Setter Property="Canvas.Top" Value="{Binding CanvasY}"/>
                             </Style>
                         </ItemsControl.ItemContainerStyle>
                         <ItemsControl.ItemTemplate>

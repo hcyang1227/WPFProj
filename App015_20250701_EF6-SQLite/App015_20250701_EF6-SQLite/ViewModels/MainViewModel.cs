@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Data;
 
 namespace App015_20250701_EF6_SQLite.ViewModels
@@ -14,6 +15,29 @@ namespace App015_20250701_EF6_SQLite.ViewModels
         public ObservableCollection<Material> MaterialList { get; set; }
         public ObservableCollection<Image> ImageList { get; set; }
         public ObservableCollection<Defect> DefectList { get; set; }
+
+        private int _canvasWidth = 400;
+        public int CanvasWidth {
+            get => _canvasWidth;
+            set
+            {
+                if (value > 400)
+                    _canvasWidth = 400;
+                else
+                    _canvasWidth = value;
+                OnPropertyChanged(nameof(CanvasWidth));
+            }
+        }
+        private int _canvasHeight = 1200;
+        public int CanvasHeight
+        {
+            get => _canvasHeight;
+            set
+            {
+                _canvasHeight = value;
+                OnPropertyChanged(nameof(CanvasHeight));
+            }
+        }
 
         //目前選擇的料捲
         private Material _selectedMaterial;
@@ -32,8 +56,8 @@ namespace App015_20250701_EF6_SQLite.ViewModels
         }
 
         //被篩選出的defect清單
-        private ObservableCollection<Defect> _filteredDefectList = new ObservableCollection<Defect>();
-        public ObservableCollection<Defect> FilteredDefectList
+        private ObservableCollection<DefectModel> _filteredDefectList = new ObservableCollection<DefectModel>();
+        public ObservableCollection<DefectModel> FilteredDefectList
         {
             get => _filteredDefectList;
             set
@@ -144,6 +168,10 @@ namespace App015_20250701_EF6_SQLite.ViewModels
         {
             if (SelectedMaterial != null)
             {
+                // 計算Canva應該要有的長度(寬度固定)
+                CanvasWidth = (int)((double)SelectedMaterial.roll_width / 1880d * 400d);
+                CanvasHeight = (int)(CanvasWidth / (double)SelectedMaterial.roll_width * (double)SelectedMaterial.roll_height);
+
                 // 先找出屬於該 Material 的所有 Image 的 index
                 var imageIndexes = ImageList
                     .Where(img => img.material_index == SelectedMaterial.index)
@@ -152,15 +180,26 @@ namespace App015_20250701_EF6_SQLite.ViewModels
 
                 // 再找出這些 Image 的所有 Defect
                 var filtered = DefectList
-                    .Where(d => d.image_index.HasValue && imageIndexes.Contains(d.image_index.Value));
+                    .Where(d => d.image_index.HasValue && imageIndexes.Contains(d.image_index.Value))
+                    .Select(d => new DefectModel
+                    {
+                        DefectIndex = d.index,
+                        roll_x = (double)d.roll_x,
+                        roll_y = (double)d.roll_y,
+                        roll_width = (double)SelectedMaterial.roll_width,
+                        roll_height = (double)SelectedMaterial.roll_height,
+                        CanvasWidth = CanvasWidth,
+                        CanvasHeight = CanvasHeight
+                    });
 
-                FilteredDefectList = new ObservableCollection<Defect>(filtered);
+                FilteredDefectList = new ObservableCollection<DefectModel>(filtered);
             }
             else
             {
-                FilteredDefectList = new ObservableCollection<Defect>();
+                FilteredDefectList = new ObservableCollection<DefectModel>();
             }
         }
+
         #endregion
     }
 }
