@@ -1,33 +1,65 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Windows.Data;
 
 namespace App015_20250701_EF6_SQLite.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
         #region [Initial Variable]
-        public EFRepository<Material> Materials { set; get; }
-        public EFRepository<Image> Images { set; get; }
-        public EFRepository<Defect> Defects { set; get; }
-        public ObservableCollection<Material> MaterialList { set; get; }
-        public ObservableCollection<Image> ImageList { set; get; }
-        public ObservableCollection<Defect> DefectList { set; get; }
+        public EFRepository<Material> Materials { get; set; }
+        public EFRepository<Image> Images { get; set; }
+        public EFRepository<Defect> Defects { get; set; }
+        public ObservableCollection<Material> MaterialList { get; set; }
+        public ObservableCollection<Image> ImageList { get; set; }
+        public ObservableCollection<Defect> DefectList { get; set; }
 
+        //目前選擇的料捲
+        private Material _selectedMaterial;
+        public Material SelectedMaterial
+        {
+            get => _selectedMaterial;
+            set
+            {
+                if (_selectedMaterial != value)
+                {
+                    _selectedMaterial = value;
+                    OnPropertyChanged(nameof(SelectedMaterial));
+                    UpdateFilteredDefects();
+                }
+            }
+        }
+
+        //被篩選出的defect清單
+        private ObservableCollection<Defect> _filteredDefectList = new ObservableCollection<Defect>();
+        public ObservableCollection<Defect> FilteredDefectList
+        {
+            get => _filteredDefectList;
+            set
+            {
+                _filteredDefectList = value;
+                OnPropertyChanged(nameof(FilteredDefectList));
+            }
+        }
         #endregion
-
+        
         public MainViewModel()
         {
             LoadDatabase();
-        }
 
+            // 初始化時載入第一卷料捲
+            if (MaterialList.Any())
+                SelectedMaterial = MaterialList.First();
+        }
+        
+        #region [Load Database Tables]
         private void LoadDatabase()
         {
             LoadMaterialTable();
             LoadImageTable();
             LoadDefectTable();
         }
-
-        #region [Load Table]
 
         private void LoadMaterialTable()
         {
@@ -105,6 +137,29 @@ namespace App015_20250701_EF6_SQLite.ViewModels
         {
             Defects.Delete(defect);
             Defects.UnitOfWork.Commit();
+        }
+        #endregion
+        #region [Update Filtered Defects]
+        private void UpdateFilteredDefects()
+        {
+            if (SelectedMaterial != null)
+            {
+                // 先找出屬於該 Material 的所有 Image 的 index
+                var imageIndexes = ImageList
+                    .Where(img => img.material_index == SelectedMaterial.index)
+                    .Select(img => img.index)
+                    .ToHashSet();
+
+                // 再找出這些 Image 的所有 Defect
+                var filtered = DefectList
+                    .Where(d => d.image_index.HasValue && imageIndexes.Contains(d.image_index.Value));
+
+                FilteredDefectList = new ObservableCollection<Defect>(filtered);
+            }
+            else
+            {
+                FilteredDefectList = new ObservableCollection<Defect>();
+            }
         }
         #endregion
     }

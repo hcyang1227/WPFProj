@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Git\\WPFProj\\App015_20250701_EF6-SQLite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D53518D-A7D6-4BA1-9FC1-58579218791E}|App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite.csproj|c:\\git\\wpfproj\\app015_20250701_ef6-sqlite\\app015_20250701_ef6-sqlite\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D53518D-A7D6-4BA1-9FC1-58579218791E}|App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite.csproj|solutionrelative:app015_20250701_ef6-sqlite\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D53518D-A7D6-4BA1-9FC1-58579218791E}|App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite.csproj|C:\\Git\\WPFProj\\App015_20250701_EF6-SQLite\\app015_20250701_ef6-sqlite\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6D53518D-A7D6-4BA1-9FC1-58579218791E}|App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite.csproj|solutionrelative:app015_20250701_ef6-sqlite\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D53518D-A7D6-4BA1-9FC1-58579218791E}|App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite.csproj|c:\\git\\wpfproj\\app015_20250701_ef6-sqlite\\app015_20250701_ef6-sqlite\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D53518D-A7D6-4BA1-9FC1-58579218791E}|App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite.csproj|solutionrelative:app015_20250701_ef6-sqlite\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,7 +26,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Git\\WPFProj\\App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite\\MainWindow.xaml",
               "RelativeDocumentMoniker": "App015_20250701_EF6-SQLite\\MainWindow.xaml",
@@ -38,13 +38,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "C:\\Git\\WPFProj\\App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite\\ViewModels\\MainViewModel.cs",
               "RelativeDocumentMoniker": "App015_20250701_EF6-SQLite\\ViewModels\\MainViewModel.cs",
               "ToolTip": "C:\\Git\\WPFProj\\App015_20250701_EF6-SQLite\\App015_20250701_EF6-SQLite\\ViewModels\\MainViewModel.cs",
               "RelativeToolTip": "App015_20250701_EF6-SQLite\\ViewModels\\MainViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswB8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-02T02:55:50.925Z",
               "EditorCaption": ""
