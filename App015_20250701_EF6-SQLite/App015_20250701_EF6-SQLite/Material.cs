@@ -23,6 +23,7 @@ namespace App015_20250701_EF6_SQLite
         public long index { get; set; }
         public Nullable<long> roll_width { get; set; }
         public Nullable<long> roll_height { get; set; }
+        public string roll_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Image> Images { get; set; }

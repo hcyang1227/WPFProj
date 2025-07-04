@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:App015_20250701_EF6_SQLite.ViewModels"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-        Title="MainWindow" Height="400" Width="750"
-        MinHeight="400" MinWidth="750">
+        Title="MainWindow" Height="600" Width="750"
+        MinHeight="600" MinWidth="750">
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
@@ -16,24 +16,38 @@
 
         <!-- 左側：選擇料捲與顯示defect位置 -->
         <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
-            <ComboBox ItemsSource="{Binding MaterialList}"
-                      SelectedItem="{Binding SelectedMaterial}"
-                      Height="30" Margin="0,0,0,10">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="index: " />
-                            <TextBlock Text="{Binding index}" />
-                            <TextBlock Text=", width: " />
-                            <TextBlock Text="{Binding roll_width}" />
-                            <TextBlock Text="mm, height: " />
-                            <TextBlock Text="{Binding roll_height}" />
-                            <TextBlock Text="mm" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="300" Width="{Binding CanvasWidth}">
+            <StackPanel Orientation="Horizontal" Width="400">
+                <ComboBox ItemsSource="{Binding MaterialList}"
+                          SelectedItem="{Binding SelectedMaterial}"
+                          Height="30" Margin="0,0,0,10"
+                          Width="320">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="material index: " />
+                                <TextBlock Text="{Binding index}" />
+                                <TextBlock Text=",id: " />
+                                <TextBlock Text="{Binding roll_id}" />
+                                <TextBlock Text=", width: " />
+                                <TextBlock Text="{Binding roll_width}" />
+                                <TextBlock Text="mm, height: " />
+                                <TextBlock Text="{Binding roll_height}" />
+                                <TextBlock Text="mm" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <ComboBox Height="30" Margin="0,0,0,10" Width="80"
+                          SelectedItem="{Binding SelectedLight}"
+                          ItemsSource="{Binding LightList}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="500" Width="{Binding CanvasWidth}">
                 <Canvas Height="{Binding CanvasHeight}" Width="{Binding CanvasWidth}" Background="Black">
                     <ItemsControl ItemsSource="{Binding FilteredDefectList}">
                         <ItemsControl.ItemsPanel>
@@ -56,7 +70,7 @@
                                         BorderThickness="0"
                                         Padding="0"
                                         Focusable="False">
-                                    <Ellipse Width="8" Height="8" Fill="Yellow" Stroke="Orange" StrokeThickness="1"/>
+                                    <Ellipse Width="8" Height="8" Fill="Yellow" Stroke="Gray" StrokeThickness="1"/>
                                 </Button>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -66,33 +80,65 @@
         </StackPanel>
 
         <!-- 右側：缺陷訊息 -->
-        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" Margin="10">
-            <StackPanel>
-                <TextBlock Text="Defect List" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <ItemsControl ItemsSource="{Binding FilteredDefectList}" Grid.Row="0">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border BorderBrush="Gray" BorderThickness="0,0,0,1" Padding="4">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="X:" FontWeight="Bold"/>
-                                        <TextBlock Text="{Binding roll_x}" Margin="4,0"/>
-                                        <TextBlock Text="Y:" FontWeight="Bold"/>
-                                        <TextBlock Text="{Binding roll_y}" Margin="4,0"/>
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                    <Border Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0">
-                        <Image Source="{Binding SelectedDefectImage}" Height="200" Stretch="Uniform"/>
-                    </Border>
-                </Grid>
-            </StackPanel>
-        </ScrollViewer>
+        <StackPanel Grid.Column="1" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="160" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0" Padding="10" BorderBrush="Gray" BorderThickness="1" CornerRadius="6" Background="#FFF9F9F9">
+                    <StackPanel>
+                        <TextBlock Text="料捲所有缺陷" FontWeight="Bold" FontSize="14" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                        <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Height="90" Width="260">
+                            <ItemsControl ItemsSource="{Binding FilteredDefectList}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="Gray" BorderThickness="0,0,0,1" Padding="4">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="X:" FontWeight="Bold"/>
+                                                <TextBlock Text="{Binding roll_x}" Margin="4,0"/>
+                                                <TextBlock Text="Y:" FontWeight="Bold"/>
+                                                <TextBlock Text="{Binding roll_y}" Margin="4,0"/>
+                                                <TextBlock Text="Kind:" FontWeight="Bold"/>
+                                                <TextBlock Text="{Binding kind}" Margin="4,0"/>
+                                                <TextBlock Text="Reliability:" FontWeight="Bold"/>
+                                                <TextBlock Text="{Binding reliability}" Margin="4,0"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0" Padding="10" BorderBrush="Gray" BorderThickness="1" CornerRadius="6" Background="#FFF9F9F9">
+                    <StackPanel Orientation="Vertical" Width="260" Height="140">
+                        <TextBlock Text="編輯料捲參數" FontWeight="Bold" FontSize="14" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                            <TextBlock Text="名稱：" Width="70" VerticalAlignment="Center"/>
+                            <TextBox IsEnabled="{Binding BoolSaveMaterial}" Text="{Binding ChangeToMaterial.roll_id, UpdateSourceTrigger=LostFocus}" Width="160"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                            <TextBlock Text="寬度(mm)：" Width="70" VerticalAlignment="Center"/>
+                            <TextBox IsEnabled="{Binding BoolSaveMaterial}" Text="{Binding ChangeToMaterial.roll_width, UpdateSourceTrigger=LostFocus}" Width="160"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                            <TextBlock Text="長度(mm)：" Width="70" VerticalAlignment="Center"/>
+                            <TextBox IsEnabled="{Binding BoolSaveMaterial}" Text="{Binding ChangeToMaterial.roll_height, UpdateSourceTrigger=LostFocus}" Width="160"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="儲存" IsEnabled="{Binding BoolSaveMaterial}" Command="{Binding SaveMaterialCommand}" Margin="0,0,8,0" Width="60"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0" Padding="10" BorderBrush="Gray" BorderThickness="1" CornerRadius="6" Background="#FFF9F9F9">
+                    <StackPanel>
+                        <TextBlock Text="缺陷點位照片" FontWeight="Bold" FontSize="14" Margin="0,0,0,8" HorizontalAlignment="Center"/>
+                        <Image Source="{Binding SelectedDefectImage}" Height="150" Width="260" Stretch="Uniform"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

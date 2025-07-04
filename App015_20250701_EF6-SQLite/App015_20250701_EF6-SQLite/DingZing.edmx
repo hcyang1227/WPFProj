@@ -39,6 +39,7 @@
           <Property Name="index" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="roll_width" Type="integer" />
           <Property Name="roll_height" Type="integer" />
+          <Property Name="roll_id" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <Association Name="FK_Defect_0_0">
           <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
@@ -131,6 +132,7 @@
           <Property Name="index" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="roll_width" Type="Int64" />
           <Property Name="roll_height" Type="Int64" />
+          <Property Name="roll_id" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Images" Relationship="mainModel1.FK_Image_0_0" FromRole="Material" ToRole="Image" />
         </EntityType>
         <Association Name="FK_Defect_0_0">
@@ -195,6 +197,7 @@
           <EntitySetMapping Name="Materials">
             <EntityTypeMapping TypeName="mainModel1.Material">
               <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="roll_id" ColumnName="roll_id" />
                 <ScalarProperty Name="roll_height" ColumnName="roll_height" />
                 <ScalarProperty Name="roll_width" ColumnName="roll_width" />
                 <ScalarProperty Name="index" ColumnName="index" />

@@ -6,6 +6,11 @@ public class DefectModel
     public double roll_height { get; set; } // mm
 
     public long DefectIndex { get; set; }
+    public string kind { get; set; }
+    public double reliability { get; set; }
+
+
+
     public double CanvasWidth { get; set; } // px
     public double CanvasHeight { get; set; } // px
 

@@ -33,6 +33,7 @@
     <EntitySetMapping Name="Materials">
       <EntityTypeMapping TypeName="mainModel1.Material">
         <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="roll_id" ColumnName="roll_id" />
           <ScalarProperty Name="roll_height" ColumnName="roll_height" />
           <ScalarProperty Name="roll_width" ColumnName="roll_width" />
           <ScalarProperty Name="index" ColumnName="index" />

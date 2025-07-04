@@ -1,8 +1,4 @@
-﻿using App015_20250701_EF6_SQLite.ViewModels;
-using System.IO;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace App015_20250701_EF6_SQLite
 {

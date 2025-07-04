@@ -34,6 +34,7 @@
     <Property Name="index" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="roll_width" Type="integer" />
     <Property Name="roll_height" Type="integer" />
+    <Property Name="roll_id" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <Association Name="FK_Defect_0_0">
     <End Role="Image" Type="Self.Image" Multiplicity="0..1" />

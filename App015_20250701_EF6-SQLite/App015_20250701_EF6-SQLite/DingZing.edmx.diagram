@@ -7,7 +7,7 @@
       <Diagram DiagramId="6fa8cd78fea84e9390cca7150d51ffd1" Name="Diagram1">
         <EntityTypeShape EntityType="mainModel1.Defect" Width="1.5" PointX="5.25" PointY="1" />
         <EntityTypeShape EntityType="mainModel1.Image" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="mainModel1.Material" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="mainModel1.Material" Width="1.5" PointX="0.75" PointY="1.5" />
         <AssociationConnector Association="mainModel1.FK_Defect_0_0" />
         <AssociationConnector Association="mainModel1.FK_Image_0_0" />
       </Diagram>
